@@ -1,34 +1,117 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Khicia</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <header>
-        <nav class="navbar">
-            <h1 class="logo">Testing</h1>
-            <ul class="nav-links">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">About</a></li>
-                <li><a href="#">Projects</a></li>
-                <li><a href="#">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+/* Simple pink landing preview */
+:root{
+  --pink-1: #ffe4ef;
+  --pink-2: #ff8fc1;
+  --accent: #ff4da1;
+  --muted: #5b2b3a;
+  --card-bg: rgba(255,255,255,0.85);
+  --shadow: 0 8px 24px rgba(107, 34, 81, 0.12);
+  --radius: 14px;
+  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
 
-    <section class="hero">
-        <div class="hero-content">
-            <h2>Coming Soon</h2>
-            <p>Wala pa syang laman.</p>
-            <a href="#" class="btn">Get Started</a>
-        </div>
-    </section>
+*{box-sizing: border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  background: linear-gradient(135deg, var(--pink-1) 0%, #ffeff8 30%, #fff0f6 60%);
+  color: var(--muted);
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  min-height:100vh;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
 
-    <footer>
-        <p>© 2025 Portfolio | Class of 2025</p>
-    </footer>
-</body>
-</html>
+/* Banner */
+.banner{
+  width:100%;
+  padding:48px 12px;
+  background: linear-gradient(90deg, rgba(255,77,161,0.12), rgba(255,140,193,0.06));
+  display:flex;
+  justify-content:center;
+  border-bottom: 1px solid rgba(255,77,161,0.06);
+}
+.banner-inner{
+  width:100%;
+  max-width:960px;
+  text-align:center;
+}
+.site-name{
+  margin:0;
+  font-size:40px;
+  letter-spacing:0.6px;
+  color: var(--accent);
+  text-shadow: 0 2px 8px rgba(255,77,161,0.12);
+}
+.tagline{
+  margin:6px 0 0 0;
+  color: #8c3a56;
+  font-weight:600;
+  opacity:0.95;
+}
+
+/* Main preview card */
+.main-content{
+  flex:1;
+  width:100%;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:48px 16px;
+}
+.preview-card{
+  width:100%;
+  max-width:720px;
+  background: var(--card-bg);
+  padding:28px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  text-align:center;
+  border: 1px solid rgba(255,77,161,0.06);
+}
+.preview-card h2{
+  margin:0 0 12px 0;
+  color: #621b3b;
+  font-size:22px;
+}
+.preview-card p{
+  margin:0 0 18px 0;
+  color:#6d374b;
+  line-height:1.45;
+}
+
+/* small meta */
+.meta{
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:8px 12px;
+  background: rgba(255, 77, 161, 0.06);
+  border-radius:999px;
+}
+.dot{
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background: var(--accent);
+  box-shadow: 0 4px 12px rgba(255,77,161,0.14);
+}
+
+/* Footer */
+.footer{
+  width:100%;
+  padding:14px 12px;
+  text-align:center;
+  color:#7b3a4d;
+  font-size:14px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0));
+  border-top: 1px solid rgba(255,77,161,0.03);
+}
+
+/* Responsive */
+@media (max-width:520px){
+  .site-name{font-size:28px}
+  .preview-card{padding:18px}
+}
