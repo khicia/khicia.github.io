@@ -2,76 +2,93 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Akhicia's Side</title>
-  <link rel="stylesheet" href="style.css" />
-</head>        
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio</title>
+
+  <!-- Link to CSS -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+</head>
 
 <body>
 
-  <!-- Header fix -->
-  <header class="floating-header">
-    <h1>PORTFOLIO</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="aboutme.html">About Me</a>
-      <a href="projects.html">Projects</a>
-      <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+  <!-- NAVBAR placeholder -->
+  <div id="navbar"></div>
 
-  <!-- Cards part -->
-  <div class="card-container">
-
-    <div class="card">
-      <h1>HELLO! <span>ohh, seems like there is something going on.</span></h1>
-      <p class="subtext">Working..</p>
-
-      <div class="laptop">
-        <img src="https://cdn-icons-png.flaticon.com/512/809/809052.png" alt="Laptop">
-        <div class="screen-text"></div>
-      </div>
+  <!-- HERO / HOME -->
+  <section id="home" class="hero">
+    <div class="hero-card">
+      <h2>HELLO!</h2>
+      <p>"Mata sa langit, Paa sa lupa"</p>
+      <p class="sub">..</p>
     </div>
+  </section>
 
-    <div class="cards-grid">
-      <h1 class="section-title">Activities</h1>
-      
-      <div class="project-card">
-        <img src="#" alt="">
+  <!-- PROJECTS -->
+  <section id="projects" class="projects">
+    <h2 class="section-title">Activities</h2>
+
+    <div class="grid">
+      <div class="card">
         <h3>Explore Canada</h3>
-        <p>A Canada tourism website showing culture, provinces, and attractions.</p>
-        <a href="https://khicia.github.io/playstation/" target="_blank" class="btn">View Project</a>
+        <i><h4>A school activity</h4></i>
+        <p>A Canada tourism website showing culture and attractions.</p>
+        <button>View Project</button>
       </div>
 
-      <div class="project-card">
-        <img src="#" alt="">
+      <div class="card">
         <h3>Projectel</h3>
-        <p>A website showcasing how my life goes from '17</p>
-        <a href="https://khicia.github.io/projectel" target="_blank" class="btn">View Project</a>
-</div>
+        <p>A website showcasing my life journey.</p>
+        <button>View Project</button>
+      </div>
 
-      <div class="project-card">
-        <img src="#" alt="">
+      <div class="card">
         <h3>PlayStation Website</h3>
-        <p>A showcase of PlayStation console history and design evolution.</p>
-        <a href="https://khicia.github.io/explore-canada/" target="_blank" class="btn">View Project</a>
+        <p>Console history and design evolution.</p>
+        <button>View Project</button>
       </div>
 
-       <div class="project-card">
-        <img src="#" alt="">
+      <div class="card">
         <h3>Pagination Gallery</h3>
-        <p>---</p>
-        <a href="https://khicia.github.io/fourth/" target="_blank" class="btn">View Project</a>
+        <p>Image gallery with pagination.</p>
+        <button>View Project</button>
       </div>
 
+      <div class="card">
+        <h3>Kasadigan ng Kabataan</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <button>View Project</button>
+      </div>
+
+      <div class="card">
+        <h3>Pagination Gallery</h3>
+        <p>Image gallery with pagination.</p>
+        <button>View Project</button>
+      </div>
     </div>
+  </section>
 
-  </div>
+  <!-- FOOTER placeholder -->
+  <div id="footer"></div>
 
-  
-  <footer class="floating-footer">
-    <p>&copy; 2024 Akhicia. All rights reserved.</p>
+  <!-- Load Navbar and Footer -->
+  <script>
+    // Load navbar and footer dynamically
+    fetch('nav_and_footer.html')
+      .then(response => response.text())
+      .then(data => {
+        // Split navbar and footer
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(data, 'text/html');
+
+        document.getElementById('navbar').innerHTML = doc.querySelector('nav').outerHTML;
+        document.getElementById('footer').innerHTML = doc.querySelector('footer').outerHTML;
+      });
+  </script>
+
 </body>
 
 </html>
