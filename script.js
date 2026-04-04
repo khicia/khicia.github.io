@@ -52,3 +52,4 @@ filterButtons.forEach(button => {
 
 // SEARCH INPUT
 searchInput.addEventListener("keyup", filterTech);
+
